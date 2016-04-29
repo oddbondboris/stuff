@@ -1,0 +1,50 @@
+# Registry case insensitive
++ /[Ww][Ii][Nn][Dd][Oo][Ww][Ss]/
++ /[Ww][Ii][Nn][Dd][Oo][Ww][Ss]/[Ss][Yy][Ss][Tt][Ee][Mm]32/
++ /[Ww][Ii][Nn][Dd][Oo][Ww][Ss]/[Ss][Yy][Ss][Tt][Ee][Mm]32/[Cc][Oo][Nn][Ff][Ii][Gg]/
+- /[Ww][Ii][Nn][Dd][Oo][Ww][Ss]/[Ss][Yy][Ss][Tt][Ee][Mm]32/[Cc][Oo][Nn][Ff][Ii][Gg]/systemprofile/
++ /[Ww][Ii][Nn][Dd][Oo][Ww][Ss]/[Ss][Yy][Ss][Tt][Ee][Mm]32/[Cc][Oo][Nn][Ff][Ii][Gg]/***
+- /[Ww][Ii][Nn][Dd][Oo][Ww][Ss]/***
+# important program data 
++ /ProgramData/
++ /ProgramData/Microsoft/
++ /ProgramData/Microsoft/Crypto/***
++ /ProgramData/Microsoft/ClickToRun/***
+- /ProgramData/Microsoft/User Account Pictures/Default Pictures/
++ /ProgramData/Microsoft/Vault/***
++ /ProgramData/Microsoft/User Account Pictures/***
++ /ProgramData/Intuit/***
+# this catches "program files" and "program files (x86)" and "ProgramData
+- /[Pp]rogram*/***
+# needs work to skip $windows.BT and other windows 10 bs
+- /$*/***
+# catches pagefile/hiberfile/swapfile
+- /*.sys
+# needs work to not delete sysrestore registry copies but everything else
+- /System Volume Information/***
+# copy userdata
++ /Users/***
+# don't copy internet caches but do copy profiles otherwise
+- /Users/*/AppData/Local/Microsoft/Windows/Temporary Internet Files/***
+- /Users/*/AppData/*/Google/Chrome/User Data/*/*Cache/***
+- /Users/*/AppData/Local/Mozilla/Firefox/Profiles/*/cache2/***
+# skip windows error reporting and other worthless data can't exclude
+#    the entire directory as it contains windows live mail and outlook
+- /Users/*/AppData/Local/Microsoft/Windows/WER/*** 
+- /Users/*/AppData/Local/Microsoft/Windows/WebCache/*** 
+# skip some cached updates from adobe 
+- /Users/*/AppData/*/Adobe/***
+# delete all norton installers !! needs work to store the licensing info without the installers
+- /Users/Public/Downloads/Norton/***
+- /Users/Public/Documents/Downloaded Installers/***
+# you might want to keep this idk 
+- /found.*/***
+# root directory trash nobody cares about
+- /MSOCache/***
+- /VAIO*/***
+- /NVIDIA/***
+- /AMD/***
+- /[Aa][Tt][Ii]/***
+# not sure if this matters but whatever
++ /***
+
