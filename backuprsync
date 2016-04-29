@@ -1,3 +1,6 @@
+# Rsync filter list for backing up windows userdata
+# usage 
+#       rsync --filter 'merge <path to backuprsync>' -r /source/path/ /destination/directory/ [--progress] 
 # Registry case insensitive
 + /[Ww][Ii][Nn][Dd][Oo][Ww][Ss]/
 + /[Ww][Ii][Nn][Dd][Oo][Ww][Ss]/[Ss][Yy][Ss][Tt][Ee][Mm]32/
