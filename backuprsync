@@ -26,20 +26,25 @@
 # needs work to not delete sysrestore registry copies but everything else
 - /System Volume Information/***
 # copy userdata
-+ /Users/***
 # don't copy internet caches but do copy profiles otherwise
 - /Users/*/AppData/Local/Microsoft/Windows/Temporary Internet Files/***
 - /Users/*/AppData/*/Google/Chrome/User Data/*/*Cache/***
 - /Users/*/AppData/Local/Mozilla/Firefox/Profiles/*/cache2/***
 # skip windows error reporting and other worthless data can't exclude
 #    the entire directory as it contains windows live mail and outlook
-- /Users/*/AppData/Local/Microsoft/Windows/WER/*** 
-- /Users/*/AppData/Local/Microsoft/Windows/WebCache/*** 
+- /Users/*/AppData/*/Temp/***
+- /Users/*/AppData/*/Microsoft/Windows/WER/***
+- /Users/*/AppData/LocalLow/Sun/Java/***
+- /Users/*/AppData/LocalLow/Microsoft/Virtual Earth 3D/***
+- /Users/*/AppData/LocalLow/Microsoft/Windows Live/***
+- /Users/*/AppData/*/Microsoft/Windows/WebCache/*** 
 # skip some cached updates from adobe 
 - /Users/*/AppData/*/Adobe/***
 # delete all norton installers !! needs work to store the licensing info without the installers
 - /Users/Public/Downloads/Norton/***
 - /Users/Public/Documents/Downloaded Installers/***
+- /Users/Public/*/*ample*/***
++ /Users/***
 # you might want to keep this idk 
 - /found.*/***
 # root directory trash nobody cares about
